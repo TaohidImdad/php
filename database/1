@@ -1,0 +1,11 @@
+[05-Oct-2024 00:50:33 UTC] log.sql
+[05-Oct-2024 00:50:33 UTC] PHP Fatal error:  Uncaught TypeError: error_log(): Argument #2 ($message_type) must be of type int, string given in D:\www\repo\Idb_batch_61\php\database\test.php:44
+Stack trace:
+#0 D:\www\repo\Idb_batch_61\php\database\test.php(44): error_log()
+#1 {main}
+  thrown in D:\www\repo\Idb_batch_61\php\database\test.php on line 44
+[05-Oct-2024 01:08:17 UTC] PHP Fatal error:  Uncaught TypeError: error_log(): Argument #2 ($message_type) must be of type int, string given in D:\www\repo\Idb_batch_61\php\database\test.php:44
+Stack trace:
+#0 D:\www\repo\Idb_batch_61\php\database\test.php(44): error_log()
+#1 {main}
+  thrown in D:\www\repo\Idb_batch_61\php\database\test.php on line 44

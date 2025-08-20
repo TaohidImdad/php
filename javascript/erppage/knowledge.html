@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP Knowledge Base</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f4f5f7;
+    color: #333;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+  
+  #search {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .categories h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .category-list button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .category-list button:hover {
+    background-color: #2980b9;
+  }
+  
+  .articles h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #2c3e50;
+  }
+  
+  .article-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article-card h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+  }
+  
+  .article-card p {
+    color: #666;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>ERP Knowledge Base</h1>
+      <input type="text" id="search" placeholder="Search articles..." oninput="filterArticles()">
+    </header>
+    
+    <div class="categories">
+      <h2>Categories</h2>
+      <div class="category-list">
+        <button onclick="filterCategory('Getting Started')">Getting Started</button>
+        <button onclick="filterCategory('Advanced Features')">Advanced Features</button>
+        <button onclick="filterCategory('Troubleshooting')">Troubleshooting</button>
+      </div>
+    </div>
+    
+    <div id="articles" class="articles">
+      <h2>All Articles</h2>
+      <div class="article-card" data-category="Getting Started">
+        <h3>Setting Up Your Account</h3>
+        <p>Learn how to set up your ERP account...</p>
+      </div>
+      <div class="article-card" data-category="Advanced Features">
+        <h3>Customizing Reports</h3>
+        <p>Advanced guide to customizing reports...</p>
+      </div>
+      <div class="article-card" data-category="Troubleshooting">
+        <h3>Resolving Login Issues</h3>
+        <p>Steps to troubleshoot login problems...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterArticles() {
+  const searchQuery = document.getElementById('search').value.toLowerCase();
+  const articles = document.querySelectorAll('.article-card');
+
+  articles.forEach(article => {
+    const title = article.querySelector('h3').textContent.toLowerCase();
+    if (title.includes(searchQuery)) {
+      article.style.display = 'block';
+    } else {
+      article.style.display = 'none';
+    }
+  });
+}
+
+function filterCategory(category) {
+  const articles = document.querySelectorAll('.article-card');
+
+  articles.forEach(article => {
+    if (category === "All" || article.dataset.category === category) {
+      article.style.display = 'block';
+    } else {
+      article.style.display = 'none';
+    }
+  });
+}
+
+  </script>
+</body>
+</html>

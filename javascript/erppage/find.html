@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Service - Software Company</title>
+  <style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+    
+    /* Header Section */
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #4a90e2;
+      color: #fff;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 1.2rem;
+    }
+    
+    /* Search and Filter Section */
+    .search-filter-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .search-bar {
+      display: flex;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 25px 0 0 25px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+    }
+
+
+
+       /* Search bar styles */
+       .search-container {
+      margin-top: 30px;
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+    }
+    .search-container input {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      outline: none;
+    }
+    .search-container svg {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: #bbb;
+    }
+    
+    /* Filter Buttons */
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .filter-btn {
+      padding: 8px 15px;
+      background-color: #e0e7ff;
+      color: #4a4a4a;
+      border-radius: 20px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background-color: #4a90e2;
+      color: #fff;
+    }
+    
+    /* Service Cards */
+    .service-cards {
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px 20px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    .card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .card .tag {
+      background-color: #f0f4ff;
+      color: #4a90e2;
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 15px;
+    }
+    .card .footer {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Find a Service</h1>
+    <p>Explore our wide range of services to meet your business needs</p>
+  </div>
+
+  <!-- Search and Filter Section -->
+
+
+
+  <div class="search-filter-container">
+
+    <div class="search-container search-bar">
+        <input type="text" placeholder="Search something...">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M21.71 20.29l-5.58-5.59A7.92 7.92 0 0018 10a8 8 0 10-8 8 7.92 7.92 0 004.7-1.57l5.59 5.58a1 1 0 001.42-1.42zM10 16a6 6 0 116-6 6 6 0 01-6 6z"></path>
+        </svg>
+      </div>
+
+
+    <!-- <div class="search-bar">
+      <input type="text" placeholder="Search for a service...">
+      <button>Search</button>
+    </div> -->
+    <div class="filters">
+      <div class="filter-btn active">All</div>
+      <div class="filter-btn">Web Development</div>
+      <div class="filter-btn">Mobile Apps</div>
+      <div class="filter-btn">Cloud Solutions</div>
+      <div class="filter-btn">Data Analytics</div>
+      <div class="filter-btn">UI/UX Design</div>
+      <div class="filter-btn">Cybersecurity</div>
+    </div>
+  </div>
+
+  <!-- Service Cards Section -->
+  <div class="service-cards">
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>We build scalable, high-performance websites tailored to your business needs.</p>
+      <div class="tags">
+        <div class="tag">HTML</div>
+        <div class="tag">CSS</div>
+        <div class="tag">JavaScript</div>
+      </div>
+      <div class="footer">Starts from $500</div>
+    </div>
+
+    <div class="card">
+      <h3>Mobile App Development</h3>
+      <p>Native and cross-platform mobile apps with seamless user experience.</p>
+      <div class="tags">
+        <div class="tag">iOS</div>
+        <div class="tag">Android</div>
+        <div class="tag">Flutter</div>
+      </div>
+      <div class="footer">Starts from $1000</div>
+    </div>
+
+    <div class="card">
+      <h3>Cloud Solutions</h3>
+      <p>Secure and scalable cloud infrastructure for enhanced productivity.</p>
+      <div class="tags">
+        <div class="tag">AWS</div>
+        <div class="tag">Azure</div>
+        <div class="tag">Google Cloud</div>
+      </div>
+      <div class="footer">Starts from $750</div>
+    </div>
+
+    <div class="card">
+      <h3>Data Analytics</h3>
+      <p>Gain valuable insights with data analytics solutions for better decision-making.</p>
+      <div class="tags">
+        <div class="tag">Data Science</div>
+        <div class="tag">Machine Learning</div>
+      </div>
+      <div class="footer">Starts from $1200</div>
+    </div>
+
+    <div class="card">
+      <h3>UI/UX Design</h3>
+      <p>Engaging and user-friendly design solutions that align with your brand.</p>
+      <div class="tags">
+        <div class="tag">Wireframes</div>
+        <div class="tag">Prototyping</div>
+      </div>
+      <div class="footer">Starts from $500</div>
+    </div>
+
+    <div class="card">
+      <h3>Cybersecurity</h3>
+      <p>Protect your digital assets with our comprehensive cybersecurity solutions.</p>
+      <div class="tags">
+        <div class="tag">Penetration Testing</div>
+        <div class="tag">Network Security</div>
+      </div>
+      <div class="footer">Starts from $1500</div>
+    </div>
+  </div>
+
+</body>
+</html>
