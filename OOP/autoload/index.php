@@ -41,7 +41,7 @@ $date= new \DateTime();
 //echo  __DIR__;
 // echo __FILE__;
 // echo __LINE__;
- //echo __NAMESPACE__;
+//echo __NAMESPACE__;
 
 
 
