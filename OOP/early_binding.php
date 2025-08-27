@@ -1,47 +1,31 @@
 <?php
+// Early vs Late Binding Example in PHP
 
-class Animal2
-{
-
-    static function getName()
-    {
-        echo static::setName();
+class A {
+    public static function who() {
+        echo "I am A\n";
     }
 
-    static function setName()
-    {
-        return "Animal";
+    // Early Binding (self::)
+    public static function testEarly() {
+        self::who(); // fixed at compile time
     }
-}
 
-
-class Dog extends Animal2
-{
-    static function setName()
-    {
-        return "dog";
+    // Late Binding (static::)
+    public static function testLate() {
+        static::who(); // resolved at runtime
     }
 }
 
-$animal = Animal2::getName();
-$dog = Dog::getName();
-
-
-
-class Abc{
-    function add(){
-        return 4+6;
-    }
-}
-class Math extends Abc{
-    function add(){
-        return 20;
+class B extends A {
+    public static function who() {
+        echo "I am B\n";
     }
 }
 
-$a= new Math();
+// ---------- Testing ----------
+echo "=== Early Binding ===\n";
+B::testEarly(); // Output: I am A
 
-echo $a->add();
-
-
-?>
+echo "\n=== Late Binding ===\n";
+B::testLate();  // Output: I am B
